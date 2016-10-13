@@ -11,7 +11,7 @@
 
 typedef NS_ENUM(NSInteger, ShareType) {
     ShareTypeSku, //商品详情分享
-    ShareTypePlayer, //鲨鱼玩家视频详情分享
+    ShareTypePlayer, //视频详情分享
     ShareTypeWeb,
     ShareTypeOther
 };
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 @interface RXUMSDK : UIView
 /**
- *  分享 (商品详情页、玩家视频详情页)方便设置参数
+ *  分享 (商品详情页、视频详情页)方便设置参数
  *
  *  这里的Url 是固定拼接的  注意。
  *
@@ -64,8 +64,6 @@ typedef NS_ENUM(NSInteger, LoginType) {
  *  @param loginType  登录方式(微信、微博)
  *  @param completion 登录结束回调
  *
- * 如果 snsAccount != nil  && errorString = nil ,说明认证成功
- * 如果 snsAccount == nil  ,说明认证失败，失败信息为 errorString
  */
 - (void)showLoginWithViewController:(id)object loginType:(LoginType)loginType completion:(void (^)(UMSocialUserInfoResponse * snsAccount, NSString * errorString))completion;
 

@@ -126,7 +126,7 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
     NSString    * _title;
     NSString    * _content;
     NSString    * _resourceId;
-    id            _image;
+    NSData      * _imageData;
     UIControl   * _control;
     
     NSString    * _serverUrl;
@@ -249,14 +249,14 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
         //好友
         platformType = UMSocialPlatformType_WechatSession;
         target = @"微信";
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:_title descr:content thumImage:_image];
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:_title descr:content thumImage:_imageData];
         [shareObject setWebpageUrl:_serverUrl];
         messageObject.shareObject = shareObject;
     }else if (index == 1) {
         platformType = UMSocialPlatformType_WechatTimeLine;
         //微信 朋友圈
         target = @"朋友圈";
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:_title descr:content thumImage:_image];
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:_title descr:content thumImage:_imageData];
         [shareObject setWebpageUrl:_serverUrl];
         messageObject.shareObject = shareObject;
     }else if (index == 2) {
@@ -268,8 +268,8 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
         target = @"微博";
         
         
-        UMShareImageObject * shareObject = [UMShareImageObject shareObjectWithTitle:_title descr:@"sdfs sdfaaf" thumImage:_image];
-        [shareObject setShareImage:_image];
+        UMShareImageObject * shareObject = [UMShareImageObject shareObjectWithTitle:_title descr:content thumImage:_imageData];
+        [shareObject setShareImage:_imageData];
         messageObject.shareObject = shareObject;
         messageObject.text = content;
     }
@@ -318,7 +318,7 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
     _title = title;
     _resourceId = resourceId;
     _content = content;
-    _image = [self dateContent:image];
+    _imageData = [self dateContent:image];
     
     _backApp = YES;
     _isShare = YES;
@@ -389,9 +389,8 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
     if(!GHSIsStringWithAnyText(string)) {
         return nil;
     }
-    
     if([string urlBOOL]) {
-        return [NSData dataWithContentsOfURL:[NSURL URLWithString:string]];
+        return UIImageJPEGRepresentation([UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:string]]], 0.1);
     }
     else {
         NSData * data =  UIImagePNGRepresentation([UIImage imageNamed:string]);
@@ -401,7 +400,7 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
         
         if ([[NSFileManager defaultManager] fileExistsAtPath:string])
         {
-            return  [NSData dataWithContentsOfFile:string];
+            return  UIImageJPEGRepresentation([UIImage imageWithData:[NSData dataWithContentsOfFile:string]], 0.1);
         }
         else {
             NSLog(@"分享的图片地址 不存在");
