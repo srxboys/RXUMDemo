@@ -119,6 +119,11 @@
     [_share shareInController:self platforms:_platforms title:@"biaoti" contents:@"" imageURLString:@"" completion:^(NSString *result) {
         
     }];
+    
+    
+    [_share shareInController:self platforms:@[UMSPlatformNameQQ, UMSPlatformNameQzone, UMSPlatformNameWechatSession, UMSPlatformNameTencentWb , UMSPlatformNameSina] title:@"标题" contents:@"分享内容" imageURLString:@"图片url" completion:^(NSString *result) {
+        //result=分享成功、失败等等信息
+    }];
 }
 
 

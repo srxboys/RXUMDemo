@@ -25,6 +25,20 @@
 
 ###第二版 完全自定义分享到哪些平台
 #### 我只写了一部分，友盟有多少，就可以写多少
+```objc
+
+    #import "RXUMShare.h"
+    //viewDidLoad里
+    _share = [[RXUMShare alloc] init];
+    [self.view addSubview:_share];
+
+
+    //分享按钮点击 操作
+    //platforms:@[这里可以根据每个页面需求，你想要分享的多个平台]
+    [_share shareInController:self platforms:@[UMSPlatformNameQQ, UMSPlatformNameQzone, UMSPlatformNameWechatSession, UMSPlatformNameTencentWb , UMSPlatformNameSina] title:@"标题" contents:@"分享内容" imageURLString:@"图片url" completion:^(NSString *result) {
+    //result=分享成功、失败等等信息
+}];
+````
 ![srxboys](https://github.com/srxboys/RXUMDemo/blob/master/RXUMDemo2/srxboys_UMDemo2.gif)
 
 -
