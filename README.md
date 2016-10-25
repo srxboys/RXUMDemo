@@ -35,9 +35,13 @@
 
     //分享按钮点击 操作
     //platforms:@[这里可以根据每个页面需求，你想要分享的多个平台]
-    [_share shareInController:self platforms:@[UMSPlatformNameQQ, UMSPlatformNameQzone, UMSPlatformNameWechatSession, UMSPlatformNameTencentWb , UMSPlatformNameSina] title:@"标题" contents:@"分享内容" imageURLString:@"图片url" completion:^(NSString *result) {
+    [_share shareInController:self platforms:@[UMSPlatformNameQQ, 
+        UMSPlatformNameQzone, UMSPlatformNameWechatSession, 
+        UMSPlatformNameTencentWb, UMSPlatformNameSina] title:@"标题" 
+        contents:@"分享内容" imageURLString:@"图片url" 
+        completion:^(NSString *result) {
     //result=分享成功、失败等等信息
-}];
+    }];
 ````
 ![srxboys](https://github.com/srxboys/RXUMDemo/blob/master/RXUMDemo2/srxboys_UMDemo2.gif)
 
