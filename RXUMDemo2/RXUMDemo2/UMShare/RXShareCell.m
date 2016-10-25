@@ -20,7 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
 //        self.contentView.backgroundColor = [UIColor redColor];
-        _imgView = [[UIImageView alloc] initWithFrame:CGRectMake((10 + CELL_LABEL_FONTSIZE)/2, 5, CELL_IMG_WH, CELL_IMG_WH)];
+        _imgView = [[UIImageView alloc] initWithFrame:CGRectMake((20 + CELL_LABEL_FONTSIZE)/2, 5, CELL_IMG_WH, CELL_IMG_WH)];
 //        _imgView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_imgView];
         
