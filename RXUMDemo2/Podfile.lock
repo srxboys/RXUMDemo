@@ -1,0 +1,32 @@
+PODS:
+  - Toast (3.0)
+  - UMengUShare/Core (6.0.1):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.0.1)
+  - UMengUShare/Social/Douban (6.0.1):
+    - UMengUShare/Core
+  - UMengUShare/Social/QQ (6.0.1):
+    - UMengUShare/Core
+  - UMengUShare/Social/Renren (6.0.1):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.0.1):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.0.1):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.0.1):
+    - UMengUShare/Core
+
+DEPENDENCIES:
+  - Toast
+  - UMengUShare/Social/Douban
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/Renren
+  - UMengUShare/Social/Sina
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
+
+SPEC CHECKSUMS:
+  Toast: 32c59229abfcf41850162b83bb9259dc84372473
+  UMengUShare: 418c2eaf7d8ba939916111d622bf5ea86c86285a
+
+COCOAPODS: 0.39.0

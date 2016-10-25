@@ -1,0 +1,7 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK" "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK" "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Toast" "${PODS_ROOT}/Headers/Public/UMengUShare"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Douban" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Renren" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/WeChat" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/WeChat"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Toast" -isystem "${PODS_ROOT}/Headers/Public/UMengUShare"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"SocialDouban" -l"SocialQQ" -l"SocialRenren" -l"SocialSina" -l"SocialWeChat" -l"Toast" -l"UMengUShare" -l"WeChatSDK" -l"WeiboSDK" -l"c++" -l"sqlite3" -l"z" -framework "CoreTelephony" -framework "ImageIO" -framework "QuartzCore" -framework "SystemConfiguration" -framework "TencentOpenAPI" -framework "UMSocialCore" -framework "UMSocialNetwork"
+PODS_ROOT = ${SRCROOT}/Pods

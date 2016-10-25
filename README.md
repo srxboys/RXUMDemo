@@ -17,7 +17,15 @@
         // code
     }
 ```
-![srxboys](https://github.com/srxboys/RXUMDemo/blob/master/srxboys_UMShare.gif)
+![srxboys](https://github.com/srxboys/RXUMDemo/blob/master/RXUMDemo1/srxboys_UMShare.gif)
+
+-
+-
+-
+
+###第二版 完全自定义分享到哪些平台
+#### 我只写了一部分，友盟有多少，就可以写多少
+![srxboys](https://github.com/srxboys/RXUMDemo/blob/master/RXUMDemo2/srxboys_UMDemo2.gif)
 
 -
 
