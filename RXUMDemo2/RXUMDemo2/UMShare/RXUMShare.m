@@ -91,6 +91,7 @@ typedef void(^SHARECompletion)(NSString * result);
     static NSString * cellIdentifer = @"platformCell";
     RXShareCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifer forIndexPath:indexPath];
     [cell setCellPlatform:_platformArray[indexPath.row]];
+    cell.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
     return cell;
 }
 
@@ -108,13 +109,17 @@ typedef void(^SHARECompletion)(NSString * result);
     
     //collection frame
     NSInteger count = platforms.count;
-    NSInteger num_i = floor(count * CELL_ROW_WIDTH / ScreenWidth);
-    NSInteger num_f = lrintf(count * CELL_ROW_WIDTH) % lrintf(ScreenWidth);
-    CGFloat height = num_i * CELL_ROW_HEIGHT + (num_f > 0 ? CELL_ROW_HEIGHT : 0);
-    
+
+    //屏幕容纳 几个 cell
+    NSInteger divisor = ScreenWidth / CELL_ROW_HEIGHT;
+    //除数
+    NSInteger number = count / divisor;
+    //余数
+    NSInteger remainder = count % divisor;
+    CGFloat height = number * CELL_ROW_HEIGHT + (remainder > 0 ? CELL_ROW_HEIGHT : 0);
+ 
     _collectionView.frame = CGRectMake(0, 0, ScreenWidth, height);
     [_collectionView reloadData];
-    
     _hideButton.frame = CGRectMake(0, height, ScreenWidth, HideButtonHeight);
     
     
