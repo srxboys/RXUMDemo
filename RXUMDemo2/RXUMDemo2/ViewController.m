@@ -115,9 +115,6 @@
     
     if(_platforms.count <= 0) return;
     
-    
-    
-    
     [_share shareInController:self platforms:_platforms title:@"biaoti" contents:@"" imageURLString:@"" completion:^(NSString *result) {
         
     }];
