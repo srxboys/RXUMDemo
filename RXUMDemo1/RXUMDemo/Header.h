@@ -10,18 +10,18 @@
 #define Header_h
 
 // 友盟 appkey
-#define UM_Statistics_APPKET  @"xxxx"
+#define UM_Statistics_APPKET  @"5787073267e58e144f0026e4"
 
 // 微信
-#define WXAPPID      @"wx"
-#define WXAPPSECRET  @"xxx"
+#define WXAPPID      @"wx358b3a0857df5da6"
+#define WXAPPSECRET  @"755c9e39d0bb86e14af965a221750f6b"
 
 #define QQAPPID      @""
 #define QQAPPSECRET  @""
 
 //新浪微博
-#define SINA_APPKEY @"xxx"
-#define SINA_APPSECRET @"wb xxx"
+#define SINA_APPKEY @"2617290677"
+#define SINA_APPSECRET @"7a0f42c09a6d9627338a1986c06d23c9"
 
 #define OpenUrl_notifaction @"AppDelegateOpenURL_Post_Notifaction"
 

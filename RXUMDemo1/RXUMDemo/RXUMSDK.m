@@ -162,45 +162,60 @@ typedef void (^BackAppBlock)(UMSocialUserInfoResponse * snsAccount, NSString * e
         line.backgroundColor = [UIColor redColor];
         [self addSubview:line];
         
-        //微信好友
-        UIButton *button0 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button0.frame = CGRectMake((ScreenWidth-60*3)/4, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
-        [button0 setBackgroundImage:GHSImageNamed(@"share_wechat") forState:UIControlStateNormal];
-        button0.tag = 3000;
-        [button0 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button0];
-        
-        UILabel *label0 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button0.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
-        label0.text = @"微信好友";
-        label0.center = CGPointMake(button0.center.x, label0.center.y);
-        [self addSubview:label0];
-        
-        //微信朋友圈
-        UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button1.frame = CGRectMake((ScreenWidth-60*3)/4*2+60, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
-        [button1 setBackgroundImage:GHSImageNamed(@"share_wechat_friends") forState:UIControlStateNormal];
-        button1.tag = 3001;
-        [button1 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button1];
-        
-        UILabel *label1 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button1.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
-        label1.text = @"朋友圈";
-        label1.center = CGPointMake(button1.center.x, label1.center.y);
-        [self addSubview:label1];
-        
-        //新浪微博
-        UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button2.frame = CGRectMake((ScreenWidth-60*3)/4*3+60*2, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
-        [button2 setBackgroundImage:GHSImageNamed(@"share_sina") forState:UIControlStateNormal];
-        button2.tag = 3002;
-        [button2 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button2];
-        
-        UILabel *label2 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button2.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
-        label2.text = @"新浪微博";
-        label2.center = CGPointMake(button2.center.x, label2.center.y);
-        [self addSubview:label2];
-        
+        if([WXApi isWXAppInstalled]) { //各个平台有没有安装都有判断方法的
+            //微信好友
+            UIButton *button0 = [UIButton buttonWithType:UIButtonTypeCustom];
+            button0.frame = CGRectMake((ScreenWidth-60*3)/4, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
+            [button0 setBackgroundImage:GHSImageNamed(@"share_wechat") forState:UIControlStateNormal];
+            button0.tag = 3000;
+            [button0 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:button0];
+            
+            UILabel *label0 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button0.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
+            label0.text = @"微信好友";
+            label0.center = CGPointMake(button0.center.x, label0.center.y);
+            [self addSubview:label0];
+            
+            //微信朋友圈
+            UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+            button1.frame = CGRectMake((ScreenWidth-60*3)/4*2+60, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
+            [button1 setBackgroundImage:GHSImageNamed(@"share_wechat_friends") forState:UIControlStateNormal];
+            button1.tag = 3001;
+            [button1 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:button1];
+            
+            UILabel *label1 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button1.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
+            label1.text = @"朋友圈";
+            label1.center = CGPointMake(button1.center.x, label1.center.y);
+            [self addSubview:label1];
+            
+            //新浪微博
+            UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+            button2.frame = CGRectMake((ScreenWidth-60*3)/4*3+60*2, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
+            [button2 setBackgroundImage:GHSImageNamed(@"share_sina") forState:UIControlStateNormal];
+            button2.tag = 3002;
+            [button2 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:button2];
+            
+            UILabel *label2 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button2.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
+            label2.text = @"新浪微博";
+            label2.center = CGPointMake(button2.center.x, label2.center.y);
+            [self addSubview:label2];
+        }
+        else {
+            //新浪微博
+            UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+            button2.frame = CGRectMake((ScreenWidth-60)/2, CGRectGetMaxY(titleLabel.frame)+30, 60, 60);
+            [button2 setBackgroundImage:GHSImageNamed(@"share_sina") forState:UIControlStateNormal];
+            button2.tag = 3002;
+            [button2 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:button2];
+            
+            UILabel *label2 = [UILabel foundLabelWithFrame:CGRectMake(0, CGRectGetMaxY(button2.frame)+10, 80, 15) font:12.f textColor:GHS_666_COLOR textAlignment:NSTextAlignmentCenter];
+            label2.text = @"新浪微博";
+            label2.center = CGPointMake(button2.center.x, label2.center.y);
+            [self addSubview:label2];
+        }
         //取消按钮
         UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
         cancelButton.backgroundColor = [UIColor whiteColor];

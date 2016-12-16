@@ -35,12 +35,20 @@
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb2617290677</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>weixin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx358b3a0857df5da6</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
