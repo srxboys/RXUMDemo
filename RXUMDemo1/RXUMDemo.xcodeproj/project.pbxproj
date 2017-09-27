@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C0615151F7B532F00EEA60A /* RXScreenshotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0615141F7B532F00EEA60A /* RXScreenshotView.m */; };
+		6C0615191F7B942100EEA60A /* RXScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0615181F7B942100EEA60A /* RXScreenshotDetailViewController.m */; };
+		6C06151D1F7B9A4800EEA60A /* srxboys.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06151C1F7B9A4800EEA60A /* srxboys.png */; };
 		6C91D07E1DAB294500870EC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C91D07D1DAB294500870EC7 /* main.m */; };
 		6C91D0811DAB294500870EC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C91D0801DAB294500870EC7 /* AppDelegate.m */; };
 		6C91D0841DAB294500870EC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C91D0831DAB294500870EC7 /* ViewController.m */; };
@@ -44,6 +47,11 @@
 
 /* Begin PBXFileReference section */
 		5842894E384DB90BD7CD6F76 /* libPods-RXUMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RXUMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0615131F7B532F00EEA60A /* RXScreenshotView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXScreenshotView.h; sourceTree = "<group>"; };
+		6C0615141F7B532F00EEA60A /* RXScreenshotView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXScreenshotView.m; sourceTree = "<group>"; };
+		6C0615171F7B942100EEA60A /* RXScreenshotDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXScreenshotDetailViewController.h; sourceTree = "<group>"; };
+		6C0615181F7B942100EEA60A /* RXScreenshotDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXScreenshotDetailViewController.m; sourceTree = "<group>"; };
+		6C06151C1F7B9A4800EEA60A /* srxboys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srxboys.png; sourceTree = "<group>"; };
 		6C91D0791DAB294500870EC7 /* RXUMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXUMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C91D07D1DAB294500870EC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C91D07F1DAB294500870EC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -155,15 +163,20 @@
 		6C91D07B1DAB294500870EC7 /* RXUMDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6C06151C1F7B9A4800EEA60A /* srxboys.png */,
 				6C91D07F1DAB294500870EC7 /* AppDelegate.h */,
 				6C91D0801DAB294500870EC7 /* AppDelegate.m */,
 				6C91D0821DAB294500870EC7 /* ViewController.h */,
 				6C91D0831DAB294500870EC7 /* ViewController.m */,
+				6C0615171F7B942100EEA60A /* RXScreenshotDetailViewController.h */,
+				6C0615181F7B942100EEA60A /* RXScreenshotDetailViewController.m */,
 				6C91D1221DAB376B00870EC7 /* RXOpenURL.h */,
 				6C91D1231DAB376B00870EC7 /* RXOpenURL.m */,
 				6C91D1271DAB7A6900870EC7 /* Header.h */,
 				6C91D0E01DAB2ED100870EC7 /* RXUMSDK.h */,
 				6C91D0E11DAB2ED100870EC7 /* RXUMSDK.m */,
+				6C0615131F7B532F00EEA60A /* RXScreenshotView.h */,
+				6C0615141F7B532F00EEA60A /* RXScreenshotView.m */,
 				6C91D0851DAB294500870EC7 /* Main.storyboard */,
 				6C91D0881DAB294500870EC7 /* Assets.xcassets */,
 				6C91D08A1DAB294500870EC7 /* LaunchScreen.storyboard */,
@@ -341,6 +354,8 @@
 				TargetAttributes = {
 					6C91D0781DAB294500870EC7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = MLKY76PU29;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -375,6 +390,7 @@
 				6C91D1201DAB2F1000870EC7 /* UMSocialShareSelectionViewCell.xib in Resources */,
 				6C91D11B1DAB2F1000870EC7 /* UMSocialSDKResources.bundle in Resources */,
 				6C91D1161DAB2F1000870EC7 /* read_me.txt in Resources */,
+				6C06151D1F7B9A4800EEA60A /* srxboys.png in Resources */,
 				6C91D11A1DAB2F1000870EC7 /* UMSocialLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C91D11F1DAB2F1000870EC7 /* UMSocialShareSelectionViewCell.m in Sources */,
+				6C0615151F7B532F00EEA60A /* RXScreenshotView.m in Sources */,
 				6C91D11D1DAB2F1000870EC7 /* UMSocialCollectionPageView.m in Sources */,
 				6C91D1211DAB2F1000870EC7 /* UMSocialUIManager.m in Sources */,
 				6C91D0841DAB294500870EC7 /* ViewController.m in Sources */,
@@ -444,6 +461,7 @@
 				6C91D1241DAB376B00870EC7 /* RXOpenURL.m in Sources */,
 				6C91D0E21DAB2ED100870EC7 /* RXUMSDK.m in Sources */,
 				6C91D11E1DAB2F1000870EC7 /* UMSocialShareSelectionView.m in Sources */,
+				6C0615191F7B942100EEA60A /* RXScreenshotDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +574,8 @@
 			baseConfigurationReference = FFAD5A3423E1F66F06746C67 /* Pods-RXUMDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MLKY76PU29;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UM/UMSocialSDK",
@@ -570,8 +590,10 @@
 					"$(PROJECT_DIR)/Third/UM/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Third/UM/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RX.RXUMDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXUMDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "528aa0c0-f569-4007-84d4-f5863b8ef1c0";
+				PROVISIONING_PROFILE_SPECIFIER = "GHS2016apps-Develop";
 			};
 			name = Debug;
 		};
@@ -580,6 +602,8 @@
 			baseConfigurationReference = A86B9C1AEB7345C440410B5A /* Pods-RXUMDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MLKY76PU29;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UM/UMSocialSDK",
@@ -594,8 +618,10 @@
 					"$(PROJECT_DIR)/Third/UM/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Third/UM/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RX.RXUMDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXUMDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "528aa0c0-f569-4007-84d4-f5863b8ef1c0";
+				PROVISIONING_PROFILE_SPECIFIER = "GHS2016apps-Develop";
 			};
 			name = Release;
 		};

@@ -16,9 +16,15 @@
     completion:^(UMSocialUserInfoResponse *snsAccount, NSString *errorString) {
         // code
     }
+    
+    /** 给截屏图片添加图片水印 */
+    - (UIImage *) imageWithWatermarkImage:(UIImage *)image;
+    
+    /** 给截屏图片添加文字水印 */
+    - (UIImage *) imageWithTextImage:(NSString *)text;
 ```
 ![srxboys](https://github.com/srxboys/RXUMDemo/blob/master/RXUMDemo1/srxboys_UMShare.gif)
-
+![srxboys_screenshot](https://github.com/srxboys/RXUMDemo/blob/master/RXUMDemo1/srxboys_screenshot.gif)
 -
 -
 -

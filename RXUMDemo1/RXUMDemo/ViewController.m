@@ -8,20 +8,36 @@
 
 #import "ViewController.h"
 #import "RXUMSDK.h"
+#import "RXScreenshotView.h"
+
+#import "RXScreenshotDetailViewController.h"
 
 #define imageURL @"http://ws2.cdn.caijing.com.cn/2013-12-06/113659890.jpg"
 
 @interface ViewController ()
 {
     RXUMSDK  * _shareView;
+    
+    RXScreenshotView * ssView;
+    UIImage * _screenshotImage;
+    UIImage * _screenshotTxtImage;
 }
 - (IBAction)shareButtonClick:(id)sender;
 - (IBAction)wxLoginButtonClick:(id)sender;
 - (IBAction)wbButtonClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *screenshotButton;
 
 @end
 
 @implementation ViewController
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)object {
+    if([segue.identifier compare:@"second"] == NO) {
+        id page2 = segue.destinationViewController;
+        [page2 setValue:_screenshotImage forKey:@"image"];
+        [page2 setValue:_screenshotTxtImage forKey:@"textImage"];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,11 +45,24 @@
     _shareView = [[RXUMSDK alloc] init];
     [self.view addSubview:_shareView];
     
-    
-    
-    
-}
+    ssView = [RXScreenshotView defaultScreenshot];
+    __weak typeof(self)weakSelf = self;
+    ssView.ScreenshotBlock = ^(UIImage *image, UIImage *txtImage) {
+        weakSelf.screenshotButton.enabled = NO;
+        if(image||txtImage) {
+            _screenshotImage = image;
+            _screenshotTxtImage = txtImage;
+            weakSelf.screenshotButton.enabled = YES;
+        }
+    };
 
+#if TARGET_IPHONE_SIMULATOR
+    /// 模拟器
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [ssView screenshotStart];
+    });
+#endif
+}
 
 
 - (IBAction)shareButtonClick:(id)sender {
@@ -83,4 +112,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 @end
